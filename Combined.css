@@ -1,0 +1,354 @@
+
+.about .content-wrap {
+	padding: 0 !important;
+}
+
+.about .content-wrap::before {
+	content: "about";
+	font-style: italic;
+	padding-left: 12px;
+	font-weight: 700;
+	font-family: Overpass, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.about strong {
+	color: color-mix(
+		in srgb,
+		rgb(var(--color-blue)) 70%,
+		rgb(var(--color-text))
+	);
+}
+
+
+.activity-feed-wrap > .section-header {
+	text-transform: lowercase;
+	font-style: italic;
+	user-select: none;
+}
+
+.activity-edit textarea::placeholder {
+	text-transform: lowercase;
+}
+
+.user:has(.actions .nav-btn.nav-btn:not(.donator-badge))
+	.activity-edit
+	textarea::placeholder {
+	color: transparent;
+}
+
+.user:has(.actions .nav-btn.nav-btn:not(.donator-badge))
+	.activity-edit
+	textarea {
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='36px' width='180px'><text x='0' y='15' letter-spacing='0.01em' font-style='italic' fill='gray' font-size='14' font-weight='400' font-family='Overpass, apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif'>leave a message any time...</text></svg>");
+	background-repeat: no-repeat;
+	background-position-y: 8px;
+	background-position-x: 15px;
+}
+
+.user:has(.actions .nav-btn.nav-btn:not(.donator-badge))
+	.activity-edit
+	textarea:not(:placeholder-shown) {
+	background-image: unset;
+}
+
+.actions .nav-btn:not(.donator-badge),
+.follower-badge {
+	background-color: rgba(var(--color-blue), 0.2) !important;
+}
+
+.donator-badge {
+	animation-duration: unset !important;
+	background-color: rgba(var(--color-blue), 0.2) !important;
+}
+
+.overview .section:first-child .section-header {
+	text-transform: lowercase;
+	font-style: italic;
+	user-select: none;
+	/* margin-bottom: 0px !important; */
+}
+
+.favourites.preview .favourites-wrap {
+	padding-top: 2px !important;
+	margin-bottom: -25px !important;
+}
+body:has(.content > .overview, .content > .favourites) .tooltip .content {
+	display: none;
+}
+
+.tooltip .title {
+	text-transform: lowercase;
+}
+
+body:has(.content > .overview, .content > .favourites)
+	.tooltip
+	.content:has(.circle) {
+	display: block;
+	text-transform: lowercase;
+}
+
+div.desktop:nth-child(2) {
+	display: none;
+}
+
+div.desktop:nth-child(3) {
+	display: none;
+}
+
+.tooltip:has(.prev-name-container) {
+	display: none;
+}
+
+/* Main nav */
+#nav.nav {
+	background-color: rgba(var(--color-background), 0.5);
+	transition: all 0.8s ease 0s, top 0.5s ease 0s !important;
+}
+
+#nav.nav:hover {
+	opacity: 1;
+}
+
+/* Custom profile navbar */
+.nav-wrap {
+	background: unset !important;
+	user-select: none;
+}
+
+.nav > .link {
+	position: relative;
+}
+
+.nav > .link::after {
+	content: var(--nav-symbol);
+	font-style: normal;
+	position: absolute;
+	left: 0;
+	height: 0px;
+	bottom: 3px;
+	opacity: 0;
+	width: 100%;
+	background: rgb(var(--color-blue));
+	transition: all 0.2s ease-in-out;
+	text-align: center;
+}
+
+.nav > .router-link-active::after,
+.nav > .link:hover::after {
+	opacity: 1;
+	bottom: 12px;
+	background: rgb(var(--color-blue));
+}
+
+.nav > .router-link-active {
+	background: unset !important;
+}
+
+.nav-wrap a {
+	text-transform: lowercase;
+	font-style: italic;
+	letter-spacing: 1px;
+}
+
+.stats-wrap {
+	grid-template-columns: 1fr;
+	grid-column-gap: 0;
+	gap: 28px;
+}
+
+.section > .stats-wrap {
+	grid-template-columns: 1fr 1fr !important;
+	grid-column-gap: 2rem !important;
+}
+
+.section > .stats-wrap::before {
+	content: "stats";
+	position: absolute;
+	padding-bottom: 4px;
+	font-style: italic;
+	font-size: 1.4rem;
+	padding-left: 12px;
+	font-weight: 700;
+	font-family: Overpass, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.stats-wrap .stats-wrap {
+	padding: 22px 7px 15px 7px !important;
+}
+
+.list-stats.content-wrap {
+	margin-bottom: 0px !important;
+}
+
+.stats-wrap .footer {
+	height: 35px;
+}
+
+.milestones .milestone:after {
+	padding-top: 0px !important;
+}
+
+.stats-wrap .footer .milestones {
+	height: 25px;
+	padding: 5px 0px;
+}
+
+.stats-wrap .footer .progress {
+	border-radius: 4px;
+}
+
+.stats-wrap .stat:first-child .value {
+	font-size: 3.5rem;
+}
+
+.stats-wrap .stat .label {
+	font-size: 0.75em;
+}
+
+.stats-wrap .stat:first-child .label {
+	font-size: 1em;
+}
+
+.stats-wrap > .list-stats > .stats-wrap {
+	grid-auto-flow: inherit;
+	align-items: center;
+	row-gap: 1.2rem;
+	grid-template-areas: "a c" "a b";
+}
+
+.stats-wrap .stat:nth-child(1) {
+	grid-area: a;
+}
+
+.stats-wrap .stat:nth-child(2) {
+	grid-area: b;
+}
+
+.stats-wrap .stat:nth-child(2) .label,
+.stats-wrap .stat:nth-child(2) .value {
+	text-align: right !important;
+}
+
+.stats-wrap .stat:nth-child(3) .label,
+.stats-wrap .stat:nth-child(3) .value {
+	text-align: left !important;
+}
+
+.stats-wrap .stat:nth-child(3) {
+	grid-area: c;
+}
+
+.stats-wrap .value {
+	padding-bottom: 4px !important;
+}
+
+.activity-feed-wrap,
+.activity-feed-wrap + div {
+	margin-top: 25px;
+}
+
+.stats-wrap .footer {
+	display: none;
+}
+
+
+.favourites.preview .favourites-wrap {
+	padding: 17px !important;
+	padding-bottom: 4px !important;
+	padding-right: 0 !important;
+}
+.favourites.preview .favourites-wrap .favourite,
+.favourites.preview .favourites-wrap > div {
+	margin-bottom: 12px !important;
+	margin-right: 17px !important;
+}
+
+.container {
+	max-width: 1140px !important;
+	padding-left: 50px !important;
+	padding-right: 50px !important;
+}
+
+.genres .genre:last-child {
+	display: none !important;
+}
+
+.history-day:nth-of-type(-n + 21) {
+	display: none;
+}
+
+.activity-entry:has(.small) {
+	grid-column-start: 1 !important;
+	grid-column-end: 3 !important;
+}
+
+.stat-cards {
+	grid-template-columns: repeat(2, 1fr) !important;
+}
+.stat-cards.has-images {
+	grid-template-columns: 1fr !important;
+	max-width: 700px !important;
+}
+
+.highlights {
+	display: grid !important;
+	grid-gap: 40px 30px !important;
+	grid-template-columns: repeat(3, 1fr) !important;
+	margin-left: 5% !important;
+	width: 90% !important;
+}
+
+.pie-chart {
+	height: auto;
+	padding: 22px;
+}
+
+.pie-chart .wrap {
+	grid-gap: 22px;
+	grid-template-columns: 1fr;
+	height: auto;
+	margin-top: 22px;
+	padding-left: 0;
+}
+
+.pie-chart .pie-chart-wrap {
+	text-align: center;
+}
+
+
+.user-follow .wrap,
+.user-follow.hohSocialContent {
+	grid-row-gap: 40px;
+}
+
+.follow-card {
+	position: relative;
+	background: unset !important;
+}
+
+.follow-card .avatar .name,
+.user-follow.hohSocialContent .avatar .name {
+	opacity: 1 !important;
+	height: calc(100% + 35px) !important;
+	position: absolute;
+	bottom: -35px;
+	background: unset !important;
+	word-break: keep-all;
+}
+
+
+.user:has(.follower-badge) .banner-content .name-wrapper {
+	position: relative;
+}
+
+.user:has(.follower-badge) .banner-content .name-wrapper::after {
+	content: var(--discord-user);
+	color: rgb(var(--color-text));
+	position: absolute;
+	padding: 22px 25px;
+	font-size: 12px;
+	left: 0;
+}
+
